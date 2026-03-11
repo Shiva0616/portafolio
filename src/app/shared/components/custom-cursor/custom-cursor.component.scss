@@ -1,0 +1,17 @@
+/* Styles are defined globally in src/styles/_cursor.scss */
+:host {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.cursor-dot.hover-active {
+  transform: scale(2);
+  background: #00C8FF;
+}
+
+.cursor-dot.clicking {
+  transform: scale(0.5);
+}

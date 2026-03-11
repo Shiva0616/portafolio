@@ -1,0 +1,106 @@
+@use "styles/typography";
+@use "styles/animations";
+@use "styles/cursor";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+
+/* Light mode (default) */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-border: #cbd5e1;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-code: #0052cc;
+
+  --accent-cyan: #00a8d8;
+  --accent-blue: #0052ff;
+  --accent-green: #00c98d;
+  --accent-purple: #7b2fff;
+
+  --navbar-bg: rgba(248, 250, 252, 0.85);
+  --navbar-border: rgba(203, 213, 225, 0.7);
+  --navbar-bg-mobile: rgba(241, 245, 249, 0.97);
+}
+
+/* Dark mode */
+.dark {
+  --bg-primary: #060b14;
+  --bg-secondary: #0b1120;
+  --bg-card: #0f1829;
+  --bg-border: #1a2840;
+
+  --text-primary: #eaf4ff;
+  --text-secondary: #7a9bc0;
+  --text-muted: #3d5470;
+  --text-code: #00c8ff;
+
+  --accent-cyan: #00c8ff;
+  --accent-blue: #0052ff;
+  --accent-green: #00ffb3;
+  --accent-purple: #7b2fff;
+
+  --navbar-bg: rgba(6, 11, 20, 0.75);
+  --navbar-border: rgba(26, 40, 64, 0.5);
+  --navbar-bg-mobile: rgba(11, 17, 32, 0.95);
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::selection {
+  background: rgba(0, 200, 255, 0.3);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-border);
+  border-radius: 3px;
+
+  &:hover {
+    background: var(--accent-cyan);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

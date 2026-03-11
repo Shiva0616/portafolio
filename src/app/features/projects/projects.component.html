@@ -1,0 +1,43 @@
+<section id="projects" class="relative py-20 md:py-28 bg-bg-secondary">
+  <div class="container mx-auto px-6 lg:px-12">
+    <app-section-title
+      title="Proyectos"
+      subtitle="Trabajo Reciente"
+    />
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12" appReveal>
+      @for (filter of filters; track filter.id) {
+        <button
+          (click)="setFilter(filter.id)"
+          class="filter-btn px-4 py-2 rounded-lg font-code text-sm transition-all duration-300 border"
+          [class]="activeFilter() === filter.id
+            ? 'bg-accent-cyan text-bg-primary border-accent-cyan shadow-lg font-bold'
+            : 'bg-bg-card text-text-secondary border-bg-border hover:text-text-primary'"
+        >
+          {{ filter.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Projects Grid -->
+    <div
+      #projectsGrid
+      class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+    >
+      @for (project of filteredProjects(); track project.id) {
+        <app-project-card
+          [project]="project"
+          class="project-card"
+        />
+      }
+    </div>
+
+    <!-- Empty State -->
+    @if (filteredProjects().length === 0 && allProjects().length > 0) {
+      <div class="text-center py-16">
+        <p class="font-body text-text-muted">No hay proyectos en esta categoría.</p>
+      </div>
+    }
+  </div>
+</section>

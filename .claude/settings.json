@@ -1,0 +1,79 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm *)",
+      "Bash(ng *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git checkout *)",
+      "Bash(git branch *)",
+      "Bash(npx prettier *)",
+      "Bash(npx eslint *)",
+      "Bash(cat *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)"
+    ],
+    "deny": [
+      "Bash(npm install *)",
+      "Bash(yarn *)",
+      "Bash(rm -rf /)",
+      "Bash(sudo *)",
+      "Bash(git push --force)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$(git branch --show-current 2>/dev/null)\" != \"main\" ] || { echo '{\"block\": true, \"message\": \"⛔ No editar directamente en main. Crea una feature branch: git checkout -b feature/nombre\"}' >&2; exit 2; }",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_TOOL_INPUT_FILE_PATH\"; if [[ \"$FILE\" == *.ts || \"$FILE\" == *.html || \"$FILE\" == *.scss ]]; then npx prettier --write \"$FILE\" 2>/dev/null && echo '{\"feedback\": \"✅ Prettier aplicado en '\"$FILE\"'\"}'; fi",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_TOOL_INPUT_FILE_PATH\"; if [[ \"$FILE\" == *.ts ]]; then npx tsc --noEmit --project tsconfig.json 2>&1 | head -20 && echo '{\"feedback\": \"✅ TypeScript OK\"}' || echo '{\"feedback\": \"⚠️ Errores TypeScript detectados — revisar antes de commit\"}'; fi",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🎯 Sesión Claude completada. Recuerda: pnpm lint && pnpm build antes del commit.'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "ANGULAR_PROJECT": "portfolio-daniel",
+    "NODE_ENV": "development"
+  }
+}

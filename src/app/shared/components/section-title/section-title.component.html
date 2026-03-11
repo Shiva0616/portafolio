@@ -1,0 +1,15 @@
+<div class="section-title-wrapper mb-12 text-center">
+  <div class="flex items-center justify-center gap-4 mb-4">
+    <span class="decorative-line h-[1px] w-12 sm:w-20"></span>
+    <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-text-primary tracking-tight">
+      {{ title() }}
+    </h2>
+    <span class="decorative-line h-[1px] w-12 sm:w-20"></span>
+  </div>
+
+  @if (subtitle()) {
+    <p class="font-body text-sm sm:text-base text-text-secondary max-w-xl mx-auto leading-relaxed">
+      {{ subtitle() }}
+    </p>
+  }
+</div>

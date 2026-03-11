@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Angular
+/.angular/cache
+dist/
+tmp/
+out-tsc/
+
+# Environment files (contain API keys)
+src/environments/environment.ts
+src/environments/environment.prod.ts
+.env
+.env.*
+!.env.example
+
+# 3D Models (large binary files from Meshy.ai)
+src/assets/models/*.glb
+src/assets/models/*.gltf
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build
+*.tsbuildinfo
+.sass-cache/
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+
+# Vercel
+.vercel/
+
+# Misc
+/connect.lock
+/libpeerconnection.log
+testem.log
+/typings

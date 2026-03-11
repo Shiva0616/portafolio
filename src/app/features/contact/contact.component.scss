@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+input,
+textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.1);
+  }
+}
+
+button[type='submit'] {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #00c8ff, #0052ff);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover:not(:disabled)::after {
+    opacity: 0.3;
+  }
+}

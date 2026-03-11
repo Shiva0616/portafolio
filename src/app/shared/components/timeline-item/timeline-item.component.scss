@@ -1,0 +1,51 @@
+.timeline-item {
+  padding-bottom: 2rem;
+
+  // Mobile: single column with left line
+  @media (max-width: 767px) {
+    padding-left: 1.5rem;
+  }
+}
+
+.timeline-card {
+  &:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3),
+                0 0 16px rgba(0, 200, 255, 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+.timeline-dot {
+  transition: box-shadow 0.3s ease;
+
+  .timeline-item:hover & {
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.5),
+                0 0 24px rgba(0, 200, 255, 0.2);
+  }
+}
+
+.timeline-arrow {
+  transition: border-color 0.3s ease;
+
+  .timeline-item:hover & {
+    border-color: rgba(0, 200, 255, 0.4);
+  }
+}
+
+// Mobile timeline line
+@media (max-width: 767px) {
+  :host {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #00C8FF 0%, #7B2FFF 100%);
+      opacity: 0.3;
+    }
+  }
+}

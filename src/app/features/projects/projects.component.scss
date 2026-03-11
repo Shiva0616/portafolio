@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+section {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1A2840 50%, transparent);
+  }
+}
+
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 200, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &.active {
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+  }
+}
+
+.projects-grid {
+  min-height: 200px;
+}
+
+// Flip animation support
+:host ::ng-deep .project-card {
+  &[data-flip-id] {
+    will-change: transform;
+  }
+}

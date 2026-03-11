@@ -1,0 +1,117 @@
+:host {
+  display: block;
+}
+
+section {
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+// Chip styles
+.chip {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 200, 255, 0.05) 0%,
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+// CTA button primary glow
+.hero-cta button {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #00c8ff, #0052ff);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 0.4;
+  }
+}
+
+// CTA button outline glow
+.hero-cta a {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// Social icon hover
+.hero-socials a {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 200, 255, 0.1) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// Canvas overlay gradient
+canvas {
+  pointer-events: none;
+}
+
+// Responsive text sizing
+@media (max-width: 640px) {
+  .hero-monogram {
+    font-size: 3rem;
+  }
+}
+
+// Scroll indicator pulse
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

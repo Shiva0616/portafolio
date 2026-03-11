@@ -1,0 +1,161 @@
+[
+  {
+    "name": "JavaScript",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    "level": 90,
+    "category": "frontend"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    "level": 90,
+    "category": "frontend"
+  },
+  {
+    "name": "HTML5",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    "level": 95,
+    "category": "frontend"
+  },
+  {
+    "name": "CSS3",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    "level": 90,
+    "category": "frontend"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    "level": 80,
+    "category": "frontend"
+  },
+  {
+    "name": "Angular",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+    "level": 85,
+    "category": "frontend"
+  },
+  {
+    "name": "React",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    "level": 75,
+    "category": "frontend"
+  },
+  {
+    "name": "Bootstrap 5",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+    "level": 80,
+    "category": "frontend"
+  },
+
+  {
+    "name": "Java",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    "level": 75,
+    "category": "backend"
+  },
+  {
+    "name": "Node.js",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    "level": 80,
+    "category": "backend"
+  },
+  {
+    "name": "Spring Boot",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+    "level": 70,
+    "category": "backend"
+  },
+  {
+    "name": "MySQL",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    "level": 75,
+    "category": "backend"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    "level": 70,
+    "category": "backend"
+  },
+  {
+    "name": "REST APIs",
+    "icon": "https://cdn.simpleicons.org/openapiinitiative/6BA54A",
+    "level": 85,
+    "category": "backend"
+  },
+
+  {
+    "name": "C / C++",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+    "level": 85,
+    "category": "hardware"
+  },
+  {
+    "name": "Arduino",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg",
+    "level": 90,
+    "category": "hardware"
+  },
+  {
+    "name": "ESP32",
+    "icon": "https://cdn.simpleicons.org/espressif/E7352C",
+    "level": 85,
+    "category": "hardware"
+  },
+  {
+    "name": "MATLAB",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg",
+    "level": 80,
+    "category": "hardware"
+  },
+  {
+    "name": "PLC Siemens",
+    "icon": "https://cdn.simpleicons.org/siemens/00A0C6",
+    "level": 75,
+    "category": "hardware"
+  },
+  {
+    "name": "PCB Design",
+    "icon": "https://cdn.simpleicons.org/kicad/314CB0",
+    "level": 70,
+    "category": "hardware"
+  },
+
+  {
+    "name": "Git",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    "level": 90,
+    "category": "tools"
+  },
+  {
+    "name": "GitHub",
+    "icon": "https://cdn.simpleicons.org/github/e6edf3",
+    "level": 90,
+    "category": "tools"
+  },
+  {
+    "name": "Docker",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    "level": 65,
+    "category": "tools"
+  },
+  {
+    "name": "VS Code",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+    "level": 95,
+    "category": "tools"
+  },
+  {
+    "name": "Swagger",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
+    "level": 75,
+    "category": "tools"
+  },
+  {
+    "name": "IntelliJ IDEA",
+    "icon": "https://cdn.simpleicons.org/intellijidea/FE315D",
+    "level": 75,
+    "category": "tools"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Ingeniero Electrónico",
+    "subtitle": "Institución Universitaria ITM",
+    "description": "Titulación en ingeniería electrónica con énfasis en sistemas de control, microcontroladores y diseño de circuitos.",
+    "date": "2017",
+    "type": "education",
+    "icon": "graduation",
+    "tags": ["Electrónica", "Control", "Microcontroladores", "PCB"]
+  },
+  {
+    "id": 2,
+    "title": "Tecnólogo en Electrónica",
+    "subtitle": "Institución Universitaria ITM",
+    "description": "Formación tecnológica en electrónica analógica, digital y sistemas embebidos.",
+    "date": "2014",
+    "type": "education",
+    "icon": "graduation",
+    "tags": ["Electrónica", "Sistemas Embebidos", "Digital"]
+  },
+  {
+    "id": 3,
+    "title": "Bootcamp de Programación – Nivel Avanzado",
+    "subtitle": "Ministerio TIC · Universidad de Antioquia · Universidad de Caldas · IU Training",
+    "description": "Formación intensiva en desarrollo de software con enfoque en programación avanzada y construcción de aplicaciones.",
+    "date": "2025",
+    "type": "complementary",
+    "icon": "code",
+    "tags": ["Programación", "Software", "Desarrollo"]
+  },
+  {
+    "id": 4,
+    "title": "Conviértete en Desarrollador Web Full Stack",
+    "subtitle": "LinkedIn Learning",
+    "description": "Curso completo de desarrollo web full stack con tecnologías frontend y backend modernas.",
+    "date": "2023",
+    "type": "complementary",
+    "icon": "code",
+    "tags": ["Full Stack", "Frontend", "Backend", "Web"]
+  },
+  {
+    "id": 5,
+    "title": "Conviértete en Desarrollador Web Frontend",
+    "subtitle": "LinkedIn Learning",
+    "description": "Formación especializada en desarrollo frontend, HTML, CSS, JavaScript y frameworks modernos.",
+    "date": "2023",
+    "type": "complementary",
+    "icon": "code",
+    "tags": ["Frontend", "HTML", "CSS", "JavaScript"]
+  }
+]

@@ -1,0 +1,23 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+code, pre, .font-code {
+  font-family: 'Fira Code', monospace;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00C8FF 0%, #7B2FFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #00C8FF 0%, #00FFB3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

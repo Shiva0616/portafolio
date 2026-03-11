@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.aitmpl.com)",
+      "Bash(node --version)",
+      "Bash(pnpm --version)",
+      "Bash(pnpm dlx @angular/cli@latest new portfolio --standalone --routing --style=scss --skip-git --skip-tests --package-manager=pnpm)",
+      "Bash(NODE_OPTIONS=\"--max-old-space-size=4096\" pnpm dlx @angular/cli@latest new portfolio --standalone --routing --style=scss --skip-git --skip-tests --package-manager=pnpm)",
+      "Bash(export NODE_OPTIONS=\"--max-old-space-size=4096\")",
+      "Bash(rm -rf portafolio-temp)",
+      "Bash(mkdir portafolio-temp)",
+      "Bash(cp -r /c/Users/Daniel/Desktop/Desarrollos/portafolio-temp/* /c/Users/Daniel/Desktop/Desarrollos/portafolio/)",
+      "Bash(cp -r /c/Users/Daniel/Desktop/Desarrollos/portafolio-temp/.vscode /c/Users/Daniel/Desktop/Desarrollos/portafolio/)",
+      "Bash(cp /c/Users/Daniel/Desktop/Desarrollos/portafolio-temp/.editorconfig /c/Users/Daniel/Desktop/Desarrollos/portafolio/)",
+      "Bash(cp /c/Users/Daniel/Desktop/Desarrollos/portafolio-temp/.gitignore /c/Users/Daniel/Desktop/Desarrollos/portafolio/.gitignore.angular)",
+      "Bash(python3 -c \" import json, sys pkg = json.load\\(sys.stdin\\) pkg[''pnpm''] = {''onlyBuiltDependencies'': [''esbuild'', ''@parcel/watcher'', ''lmdb'', ''msgpackr-extract'']} json.dump\\(pkg, sys.stdout, indent=2\\) \")",
+      "Bash(node -e \":*)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+section {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1A2840 50%, transparent);
+  }
+}
+
+// Stats card hover glow
+.stat-card {
+  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(0, 200, 255, 0.1);
+  }
+}
+
+// Timeline container with center line (desktop)
+.timeline-container {
+  position: relative;
+
+  @media (min-width: 768px) {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #00C8FF 0%, #7B2FFF 50%, transparent 100%);
+      transform: translateX(-50%);
+      opacity: 0.3;
+    }
+  }
+}

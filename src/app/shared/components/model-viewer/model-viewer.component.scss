@@ -1,0 +1,53 @@
+.model-viewer-container {
+  position: relative;
+  background: linear-gradient(135deg, #0B1120 0%, #0F1829 100%);
+
+  canvas {
+    display: block;
+  }
+}
+
+.loading-overlay {
+  background: linear-gradient(135deg, #0B1120 0%, #0F1829 100%);
+}
+
+.loading-spinner {
+  animation: model-spin 1s linear infinite;
+}
+
+@keyframes model-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Skeleton shimmer effect
+.loading-content {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -100px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 200, 255, 0.03) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

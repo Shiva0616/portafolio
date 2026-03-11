@@ -1,0 +1,190 @@
+<nav
+  class="fixed top-0 left-0 w-full z-50 transition-transform duration-300"
+  [ngClass]="{
+    '-translate-y-full': !navbarVisible(),
+    'translate-y-0': navbarVisible(),
+    'navbar--scrolled': navbarScrolled(),
+  }"
+>
+  <div class="navbar-glass">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <button
+          type="button"
+          class="logo group inline-flex items-center gap-3 rounded-2xl px-1 py-1.5 sm:px-2"
+          (click)="navigateTo('hero')"
+          aria-label="Daniel Castañeda - Ir al inicio"
+          title="Ir al inicio"
+          data-cursor="pointer"
+        >
+          <span
+            class="logo-mark flex h-11 w-11 items-center justify-center sm:h-12 sm:w-12"
+          >
+            <img
+              [src]="
+                isDark()
+                  ? 'assets/icons/logo-dark.svg'
+                  : 'assets/icons/logo.svg'
+              "
+              alt=""
+              aria-hidden="true"
+              class="logo-image h-11 w-11 sm:h-12 sm:w-12"
+              width="48"
+              height="48"
+            />
+          </span>
+          <span
+            class="logo-copy hidden sm:flex sm:flex-col sm:items-start sm:justify-center"
+          >
+            <span
+              class="font-display text-sm font-bold uppercase tracking-[0.24em] text-text-primary transition-colors duration-300 group-hover:text-accent-cyan"
+            >
+              Shiva
+            </span>
+            <span
+              class="font-body text-[0.7rem] font-medium uppercase tracking-[0.18em] text-text-secondary"
+            >
+              Software Developer
+            </span>
+          </span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1">
+          @for (section of sections; track section.id) {
+            <button
+              class="nav-link relative px-3 py-2 text-sm font-body transition-colors duration-200"
+              [ngClass]="{
+                'text-accent-cyan': activeSection() === section.id,
+                'text-text-secondary hover:text-text-primary':
+                  activeSection() !== section.id,
+              }"
+              (click)="navigateTo(section.id)"
+              data-cursor="pointer"
+            >
+              {{ section.label }}
+              <span
+                class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-accent-cyan transition-all duration-300"
+                [ngClass]="{
+                  'w-full opacity-100': activeSection() === section.id,
+                  'w-0 opacity-0': activeSection() !== section.id,
+                }"
+              ></span>
+            </button>
+          }
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle flex items-center justify-center w-9 h-9 rounded-lg border border-bg-border text-text-secondary hover:text-accent-cyan hover:border-accent-cyan transition-all duration-200"
+            (click)="toggleTheme()"
+            [attr.aria-label]="
+              isDark() ? 'Switch to light mode' : 'Switch to dark mode'
+            "
+            data-cursor="pointer"
+          >
+            @if (isDark()) {
+              <!-- Sun icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            } @else {
+              <!-- Moon icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            }
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="hamburger md:hidden flex flex-col items-center justify-center w-9 h-9 gap-[5px]"
+            (click)="toggleMobileMenu()"
+            [attr.aria-label]="mobileMenuOpen() ? 'Close menu' : 'Open menu'"
+            [attr.aria-expanded]="mobileMenuOpen()"
+            data-cursor="pointer"
+          >
+            <span
+              class="hamburger-line w-5 h-[2px] bg-text-secondary transition-all duration-300"
+              [ngClass]="{
+                'rotate-45 translate-y-[7px] bg-accent-cyan': mobileMenuOpen(),
+                '': !mobileMenuOpen(),
+              }"
+            ></span>
+            <span
+              class="hamburger-line w-5 h-[2px] bg-text-secondary transition-all duration-300"
+              [ngClass]="{
+                'opacity-0 scale-x-0': mobileMenuOpen(),
+                'opacity-100': !mobileMenuOpen(),
+              }"
+            ></span>
+            <span
+              class="hamburger-line w-5 h-[2px] bg-text-secondary transition-all duration-300"
+              [ngClass]="{
+                '-rotate-45 -translate-y-[7px] bg-accent-cyan':
+                  mobileMenuOpen(),
+                '': !mobileMenuOpen(),
+              }"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    class="mobile-menu md:hidden overflow-hidden transition-all duration-300"
+    [ngClass]="{
+      'max-h-96 opacity-100': mobileMenuOpen(),
+      'max-h-0 opacity-0': !mobileMenuOpen(),
+    }"
+  >
+    <div class="navbar-glass-mobile px-4 py-4 space-y-1">
+      @for (section of sections; track section.id) {
+        <button
+          class="block w-full text-left px-4 py-3 rounded-lg text-sm font-body transition-all duration-200"
+          [ngClass]="{
+            'text-accent-cyan bg-accent-cyan/10':
+              activeSection() === section.id,
+            'text-text-secondary hover:text-text-primary hover:bg-bg-card':
+              activeSection() !== section.id,
+          }"
+          (click)="navigateTo(section.id)"
+          data-cursor="pointer"
+        >
+          {{ section.label }}
+        </button>
+      }
+    </div>
+  </div>
+</nav>

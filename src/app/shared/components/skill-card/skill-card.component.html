@@ -1,0 +1,25 @@
+<div
+  #cardElement
+  class="skill-card group relative rounded-xl border border-bg-border bg-bg-card p-4 sm:p-5 transition-all duration-300 hover:border-transparent"
+  [style.--glow-color]="categoryColor"
+>
+  <div class="flex items-center gap-3">
+    <!-- Skill Icon -->
+    <div
+      class="skill-icon flex items-center justify-center w-10 h-10 rounded-lg bg-bg-secondary transition-colors duration-300"
+      [style.color]="categoryColor"
+    >
+      <img
+        [src]="skill().icon"
+        [alt]="skill().name"
+        class="w-6 h-6 object-contain"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Skill Name -->
+    <h4 class="font-body text-sm font-semibold text-text-primary truncate">
+      {{ skill().name }}
+    </h4>
+  </div>
+</div>

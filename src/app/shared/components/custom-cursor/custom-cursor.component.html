@@ -1,0 +1,18 @@
+@if (!isTouch()) {
+  <div
+    #cursorDot
+    class="cursor-dot"
+    [ngClass]="{
+      'hover-active': hoverActive(),
+      'clicking': clicking()
+    }"
+  ></div>
+  <div
+    #cursorRing
+    class="cursor-ring"
+    [ngClass]="{
+      'hover-active': hoverActive(),
+      'clicking': clicking()
+    }"
+  ></div>
+}

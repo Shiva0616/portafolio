@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Sistema de Monitoreo de Cultivo",
+    "description": "Sistema IoT para monitoreo en tiempo real de variables ambientales en cultivos usando ESP32, sensores de temperatura/humedad y dashboard web.",
+    "category": "iot",
+    "stack": ["ESP32", "C++", "MQTT", "Node.js", "Angular"],
+    "model3d": {
+      "type": "gltf",
+      "src": "assets/models/esp32.glb",
+      "alt": "Microcontrolador ESP32 3D"
+    },
+    "github": "https://github.com/danysuarez",
+    "demo": ""
+  },
+  {
+    "id": 2,
+    "title": "Control PID Balancín",
+    "description": "Sistema de control PID implementado en microcontrolador para estabilización de balancín con sensor ultrasónico y servo motor.",
+    "category": "hardware",
+    "stack": ["C++", "MATLAB", "Servo", "PID", "Arduino"],
+    "model3d": {
+      "type": "three",
+      "component": "wireframe-sphere",
+      "alt": "Sistema de control PID 3D"
+    },
+    "github": "https://github.com/danysuarez",
+    "demo": ""
+  },
+  {
+    "id": 3,
+    "title": "Ecualizador Digital",
+    "description": "Ecualizador de audio digital implementado con procesamiento de señales en MATLAB y C++, con interfaz de visualización en tiempo real.",
+    "category": "software",
+    "stack": ["MATLAB", "C++", "DSP", "FFT"],
+    "model3d": {
+      "type": "three",
+      "component": "audio-wave",
+      "alt": "Visualización de señal de audio 3D"
+    },
+    "github": "https://github.com/danysuarez",
+    "demo": ""
+  },
+  {
+    "id": 4,
+    "title": "Ecualizador 3 Bandas PCB",
+    "description": "Diseño y fabricación de PCB para ecualizador analógico de 3 bandas con filtros activos y amplificadores operacionales.",
+    "category": "hardware",
+    "stack": ["PCB Design", "Electrónica Analógica", "Op-Amps", "KiCad"],
+    "model3d": {
+      "type": "gltf",
+      "src": "assets/models/pcb.glb",
+      "alt": "PCB de ecualizador 3D"
+    },
+    "github": "https://github.com/danysuarez",
+    "demo": ""
+  },
+  {
+    "id": 5,
+    "title": "Domótica PLC S7-300",
+    "description": "Sistema de automatización domótica implementado con PLC Siemens S7-300, control de iluminación, climatización y seguridad.",
+    "category": "automation",
+    "stack": ["Siemens S7-300", "PLC", "SCADA", "Ladder"],
+    "model3d": {
+      "type": "gltf",
+      "src": "assets/models/plc.glb",
+      "alt": "PLC Siemens S7-300 3D"
+    },
+    "github": "https://github.com/danysuarez",
+    "demo": ""
+  }
+]

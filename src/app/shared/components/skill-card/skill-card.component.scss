@@ -1,0 +1,25 @@
+.skill-card {
+  --glow-color: #00c8ff;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px color-mix(in srgb, var(--glow-color) 25%, transparent),
+      0 0 40px color-mix(in srgb, var(--glow-color) 10%, transparent);
+    border-color: var(--glow-color);
+  }
+}
+
+.skill-icon {
+  border: 1px solid rgba(26, 40, 64, 0.5);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  .skill-card:hover & {
+    border-color: var(--glow-color);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--glow-color) 30%, transparent);
+  }
+}

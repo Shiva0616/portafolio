@@ -1,0 +1,41 @@
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #00C8FF;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 200, 255, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+  transform: translate(-50%, -50%);
+
+  &.hover-active {
+    width: 60px;
+    height: 60px;
+    border-color: #00C8FF;
+    background: rgba(0, 200, 255, 0.05);
+  }
+
+  &.clicking {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
