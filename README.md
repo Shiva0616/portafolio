@@ -54,7 +54,7 @@ Mi objetivo es unir la precisión de la ingeniería con la creatividad del códi
 ## Contacto  
 
 - **Email**: danysuarez1606@gmail.com  
-- **LinkedIn**: [linkedin.com/in/daniel-castaneda-dev](https://linkedin.com/in/daniel-castaneda-dev)  
+- **LinkedIn**: https://www.linkedin.com/in/daniel-alejandro-casta%C3%B1eda-su%C3%A1rez-165197211/
 - **WhatsApp**: [+57 301 388 4905](https://wa.me/573013884905)  
 
 ---
