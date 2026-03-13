@@ -1,6 +1,6 @@
 {
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm build",
+  "buildCommand": "NODE_OPTIONS='--max-old-space-size=4096' pnpm build",
   "outputDirectory": "dist/portafolio/browser",
   "rewrites": [
     { "source": "/assets/(.*)", "destination": "/assets/$1" },
@@ -10,7 +10,10 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]
