@@ -9,7 +9,7 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import { isPlatformBrowser, NgClass } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { ThreeService } from '@core/services/three.service';
 
 export interface Model3DConfig {
@@ -22,7 +22,7 @@ export interface Model3DConfig {
 @Component({
   selector: 'app-model-viewer',
   standalone: true,
-  imports: [NgClass],
+  imports: [],
   templateUrl: './model-viewer.component.html',
   styleUrls: ['./model-viewer.component.scss'],
 })

@@ -8,24 +8,27 @@
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1.5fr;
+    align-items: stretch;
   }
 }
 
 input,
 textarea {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:focus {
     box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.1);
   }
 }
 
-button[type='submit'] {
+button[type="submit"] {
   position: relative;
   overflow: hidden;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: -2px;
     border-radius: inherit;
