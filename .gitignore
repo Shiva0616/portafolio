@@ -47,6 +47,11 @@ yarn-error.log*
 
 # Testing
 coverage/
+out-tsc/spec/
+karma-results/
+.karma_slimerjs/
+*.lcov
+test-results.xml
 
 # Vercel
 .vercel/
