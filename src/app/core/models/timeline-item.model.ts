@@ -7,4 +7,5 @@ export interface TimelineItem {
   type: 'education' | 'complementary' | 'work';
   icon?: string;
   tags?: string[];
+  link?: string;
 }

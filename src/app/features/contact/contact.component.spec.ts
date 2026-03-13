@@ -112,7 +112,7 @@ describe('ContactComponent', () => {
   it('contactInfo debe incluir un email de contacto', () => {
     const fixture = TestBed.createComponent(ContactComponent);
     const emailEntry = fixture.componentInstance.contactInfo.find(
-      (c) => c.icon === 'email'
+      (c) => c.icon === 'email',
     );
     expect(emailEntry).toBeTruthy();
     expect(emailEntry!.href).toContain('mailto:');

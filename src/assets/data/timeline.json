@@ -7,7 +7,8 @@
     "date": "2026",
     "type": "work",
     "icon": "briefcase",
-    "tags": ["Angular", "Node.js", "TypeScript", "MySQL", "AgriTech"]
+    "tags": ["Angular", "Node.js", "TypeScript", "MySQL", "AgriTech"],
+    "link": "https://github.com/Shiva0616"
   },
   {
     "id": 7,
@@ -17,7 +18,8 @@
     "date": "2026",
     "type": "work",
     "icon": "briefcase",
-    "tags": ["TypeScript", "JavaScript", "Analitica", "ROI", "Producto"]
+    "tags": ["TypeScript", "JavaScript", "Analitica", "ROI", "Producto"],
+    "link": "https://github.com/Shiva0616"
   },
   {
     "id": 8,
@@ -27,7 +29,8 @@
     "date": "2026",
     "type": "work",
     "icon": "briefcase",
-    "tags": ["Angular", "TypeScript", "Tailwind CSS", "GSAP", "Three.js"]
+    "tags": ["Angular", "TypeScript", "Tailwind CSS", "GSAP", "Three.js"],
+    "link": "https://github.com/Shiva0616/portafolio"
   },
   {
     "id": 1,

@@ -84,10 +84,7 @@ describe('ThemeService', () => {
   describe('en entorno server (SSR)', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [
-          ThemeService,
-          { provide: PLATFORM_ID, useValue: 'server' },
-        ],
+        providers: [ThemeService, { provide: PLATFORM_ID, useValue: 'server' }],
       });
       service = TestBed.inject(ThemeService);
     });
