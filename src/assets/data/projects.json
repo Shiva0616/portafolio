@@ -7,10 +7,10 @@
     "stack": ["ESP32", "C++", "MQTT", "Node.js", "Angular"],
     "model3d": {
       "type": "gltf",
-      "src": "assets/models/esp32.glb",
+      "src": "assets/models/ESP32Wroom.glb",
       "alt": "Microcontrolador ESP32 3D"
     },
-    "github": "https://github.com/danysuarez",
+    "github": "https://github.com/Shiva0616",
     "demo": ""
   },
   {
@@ -20,11 +20,11 @@
     "category": "hardware",
     "stack": ["C++", "MATLAB", "Servo", "PID", "Arduino"],
     "model3d": {
-      "type": "three",
-      "component": "wireframe-sphere",
-      "alt": "Sistema de control PID 3D"
+      "type": "gltf",
+      "src": "assets/models/BALANCIN v20.glb",
+      "alt": "Balancín Control PID 3D"
     },
-    "github": "https://github.com/danysuarez",
+    "github": "https://github.com/Shiva0616",
     "demo": ""
   },
   {
@@ -34,11 +34,11 @@
     "category": "software",
     "stack": ["MATLAB", "C++", "DSP", "FFT"],
     "model3d": {
-      "type": "three",
-      "component": "audio-wave",
-      "alt": "Visualización de señal de audio 3D"
+      "type": "gltf",
+      "src": "assets/models/ecualizador-digital.glb",
+      "alt": "Ecualizador Digital 3D"
     },
-    "github": "https://github.com/danysuarez",
+    "github": "https://github.com/Shiva0616",
     "demo": ""
   },
   {
@@ -49,24 +49,24 @@
     "stack": ["PCB Design", "Electrónica Analógica", "Op-Amps", "KiCad"],
     "model3d": {
       "type": "gltf",
-      "src": "assets/models/pcb.glb",
-      "alt": "PCB de ecualizador 3D"
+      "src": "assets/models/amplificador.glb",
+      "alt": "Amplificador de 3 bandas 3D"
     },
-    "github": "https://github.com/danysuarez",
+    "github": "https://github.com/Shiva0616",
     "demo": ""
   },
   {
     "id": 5,
-    "title": "Domótica PLC S7-300",
-    "description": "Sistema de automatización domótica implementado con PLC Siemens S7-300, control de iluminación, climatización y seguridad.",
+    "title": "Domótica PLC S7-1200",
+    "description": "Sistema de automatización domótica implementado con PLC Siemens S7-1200, control de iluminación, climatización y seguridad.",
     "category": "automation",
-    "stack": ["Siemens S7-300", "PLC", "SCADA", "Ladder"],
+    "stack": ["Siemens S7-1200", "PLC", "SCADA", "Ladder"],
     "model3d": {
       "type": "gltf",
-      "src": "assets/models/plc.glb",
-      "alt": "PLC Siemens S7-300 3D"
+      "src": "assets/models/Siemens S7-1200.glb",
+      "alt": "PLC Siemens S7-1200 3D"
     },
-    "github": "https://github.com/danysuarez",
+    "github": "https://github.com/Shiva0616",
     "demo": ""
   }
 ]

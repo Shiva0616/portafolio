@@ -54,7 +54,10 @@ export class ThreeService {
       velocities[i3 + 2] = (Math.random() - 0.5) * 0.003;
     }
 
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(positions, 3),
+    );
 
     const particleMaterial = new THREE.PointsMaterial({
       color: CYAN,
@@ -74,8 +77,14 @@ export class ThreeService {
     const linePositions = new Float32Array(maxLineVertices * 3);
     const lineColors = new Float32Array(maxLineVertices * 3);
     const lineGeometry = new THREE.BufferGeometry();
-    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-    lineGeometry.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
+    lineGeometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(linePositions, 3),
+    );
+    lineGeometry.setAttribute(
+      'color',
+      new THREE.BufferAttribute(lineColors, 3),
+    );
 
     const lineMaterial = new THREE.LineBasicMaterial({
       vertexColors: true,
@@ -114,7 +123,8 @@ export class ThreeService {
     const animate = () => {
       animationId = requestAnimationFrame(animate);
 
-      const posArray = particleGeometry.attributes['position'].array as Float32Array;
+      const posArray = particleGeometry.attributes['position']
+        .array as Float32Array;
 
       // Update particle positions
       for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -149,8 +159,10 @@ export class ThreeService {
       // Update connecting lines
       let lineIndex = 0;
 
-      const linePosArray = lineGeometry.attributes['position'].array as Float32Array;
-      const lineColArray = lineGeometry.attributes['color'].array as Float32Array;
+      const linePosArray = lineGeometry.attributes['position']
+        .array as Float32Array;
+      const lineColArray = lineGeometry.attributes['color']
+        .array as Float32Array;
 
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         for (let j = i + 1; j < PARTICLE_COUNT; j++) {
@@ -262,8 +274,6 @@ export class ThreeService {
     controls.enablePan = false;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2;
-    controls.maxPolarAngle = Math.PI / 1.8;
-    controls.minPolarAngle = Math.PI / 4;
 
     // --- Load GLB ---
     const loader = new GLTFLoader();
@@ -273,22 +283,36 @@ export class ThreeService {
       (gltf) => {
         const model = gltf.scene;
 
-        // Center and scale the model to fit the viewport
+        // 1. Scale so largest dimension = 2
+        const prebox = new THREE.Box3().setFromObject(model);
+        const presize = prebox.getSize(new THREE.Vector3());
+        const maxDim = Math.max(presize.x, presize.y, presize.z);
+        const s = 2 / maxDim;
+        model.scale.setScalar(s);
+
+        // 2. Recompute AABB after scaling to get the real center
+        model.updateMatrixWorld(true);
         const box = new THREE.Box3().setFromObject(model);
-        const size = box.getSize(new THREE.Vector3());
         const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
 
-        const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 2 / maxDim;
-        model.scale.setScalar(scale);
-        model.position.sub(center.multiplyScalar(scale));
-
+        // 3. Offset model so its center is at world origin
+        model.position.sub(center);
         scene.add(model);
+
+        // 4. Fit camera: place it directly in front at a distance based on FOV
+        const maxExtent = Math.max(size.x, size.y, size.z);
+        const fovRad = (camera.fov / 2) * (Math.PI / 180);
+        const dist = (maxExtent / 2 / Math.tan(fovRad)) * 1.4;
+        camera.position.set(0, 0, dist);
+        camera.lookAt(0, 0, 0);
+        controls.target.set(0, 0, 0);
+        controls.update();
       },
       undefined,
       (error) => {
         console.error('ThreeService: Failed to load GLB model:', error);
-      }
+      },
     );
 
     // --- Resize handling ---
@@ -531,7 +555,11 @@ export class ThreeService {
     const lineGroup = new THREE.Group();
     scene.add(lineGroup);
 
-    const lineRefs: { geometry: THREE.BufferGeometry; positions: Float32Array; offset: number }[] = [];
+    const lineRefs: {
+      geometry: THREE.BufferGeometry;
+      positions: Float32Array;
+      offset: number;
+    }[] = [];
 
     for (let l = 0; l < LINES; l++) {
       const geometry = new THREE.BufferGeometry();
@@ -544,7 +572,10 @@ export class ThreeService {
         positions[i3 + 2] = (l - (LINES - 1) / 2) * 0.4; // spread lines along z
       }
 
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute(
+        'position',
+        new THREE.BufferAttribute(positions, 3),
+      );
 
       const hue = 0.53 + l * 0.03; // cyan-ish range
       const material = new THREE.LineBasicMaterial({

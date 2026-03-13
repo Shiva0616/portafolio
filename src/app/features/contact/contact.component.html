@@ -1,55 +1,102 @@
 <section id="contact" class="relative py-20 md:py-28 bg-bg-secondary">
   <div class="container mx-auto px-6 lg:px-12">
-    <app-section-title
-      title="Contacto"
-      subtitle="Hablemos de tu proyecto"
-    />
+    <app-section-title title="Contacto" subtitle="Hablemos de tu proyecto" />
 
     <div class="contact-grid mt-16">
       <!-- Contact Info -->
-      <div appReveal class="space-y-6">
+      <div appReveal class="flex flex-col">
         <p class="text-text-secondary leading-relaxed mb-8">
-          ¿Tienes un proyecto en mente o quieres colaborar? No dudes en contactarme.
-          Estoy disponible para proyectos freelance, consultoría y oportunidades laborales.
+          ¿Tienes un proyecto en mente o quieres colaborar? No dudes en
+          contactarme. Estoy disponible para proyectos freelance, consultoría y
+          oportunidades laborales.
         </p>
 
-        @for (info of contactInfo; track info.label) {
-          <div class="flex items-center gap-4 p-4 bg-bg-card rounded-lg border border-bg-border">
-            @switch (info.icon) {
-              @case ('email') {
-                <svg class="w-5 h-5 text-accent-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
-                </svg>
+        <div class="flex flex-col gap-4 flex-1 justify-between">
+          @for (info of contactInfo; track info.label) {
+            <div
+              class="flex items-center gap-4 p-4 bg-bg-card rounded-lg border border-bg-border flex-1"
+            >
+              @switch (info.icon) {
+                @case ("email") {
+                  <svg
+                    class="w-5 h-5 text-accent-cyan flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    />
+                  </svg>
+                }
+                @case ("location") {
+                  <svg
+                    class="w-5 h-5 text-accent-green flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                    />
+                  </svg>
+                }
+                @case ("status") {
+                  <svg
+                    class="w-5 h-5 text-accent-purple flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                }
               }
-              @case ('location') {
-                <svg class="w-5 h-5 text-accent-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
-                </svg>
-              }
-              @case ('status') {
-                <svg class="w-5 h-5 text-accent-purple flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                </svg>
-              }
-            }
-            <div>
-              <div class="text-text-muted text-xs font-code mb-1">{{ info.label }}</div>
-              @if (info.href) {
-                <a [href]="info.href" class="text-text-primary hover:text-accent-cyan transition-colors text-sm">
-                  {{ info.value }}
-                </a>
-              } @else {
-                <span class="text-text-primary text-sm">{{ info.value }}</span>
-              }
+              <div>
+                <div class="text-text-muted text-xs font-code mb-1">
+                  {{ info.label }}
+                </div>
+                @if (info.href) {
+                  <a
+                    [href]="info.href"
+                    class="text-text-primary hover:text-accent-cyan transition-colors text-sm"
+                  >
+                    {{ info.value }}
+                  </a>
+                } @else {
+                  <span class="text-text-primary text-sm">{{
+                    info.value
+                  }}</span>
+                }
+              </div>
             </div>
-          </div>
-        }
+          }
+        </div>
       </div>
 
       <!-- Contact Form -->
       <div appReveal>
-        <form [formGroup]="contactForm" (ngSubmit)="sendMessage()" class="space-y-4">
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="sendMessage()"
+          class="space-y-4"
+        >
           <div>
             <input
               formControlName="name"
@@ -93,7 +140,9 @@
           >
             @if (sending()) {
               <span class="flex items-center justify-center gap-2">
-                <span class="w-4 h-4 border-2 border-bg-primary/30 border-t-bg-primary rounded-full animate-spin"></span>
+                <span
+                  class="w-4 h-4 border-2 border-bg-primary/30 border-t-bg-primary rounded-full animate-spin"
+                ></span>
                 Enviando...
               </span>
             } @else {
@@ -103,13 +152,17 @@
         </form>
 
         @if (sent()) {
-          <div class="mt-4 p-4 bg-accent-green/10 border border-accent-green/30 rounded-lg text-accent-green text-sm text-center">
+          <div
+            class="mt-4 p-4 bg-accent-green/10 border border-accent-green/30 rounded-lg text-accent-green text-sm text-center"
+          >
             ¡Mensaje enviado correctamente!
           </div>
         }
 
         @if (error()) {
-          <div class="mt-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
+          <div
+            class="mt-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm text-center"
+          >
             Error al enviar. Intenta de nuevo.
           </div>
         }
