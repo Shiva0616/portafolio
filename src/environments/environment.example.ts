@@ -3,8 +3,8 @@
 export const environment = {
   production: false,
   emailjs: {
-    serviceId: 'YOUR_SERVICE_ID',    // EmailJS → Email Services
-    templateId: 'YOUR_TEMPLATE_ID',  // EmailJS → Email Templates
-    publicKey: 'YOUR_PUBLIC_KEY',    // EmailJS → Account → API Keys
+    serviceId: 'YOUR_SERVICE_ID', // EmailJS → Email Services
+    templateId: 'YOUR_TEMPLATE_ID', // EmailJS → Email Templates
+    publicKey: 'YOUR_PUBLIC_KEY', // EmailJS → Account → API Keys
   },
 };
