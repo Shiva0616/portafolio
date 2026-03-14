@@ -57,3 +57,7 @@ test-results.xml
 /libpeerconnection.log
 testem.log
 /typings
+
+# Angular environment files (contain API keys - never commit)
+src/environments/environment.ts
+src/environments/environment.prod.ts
