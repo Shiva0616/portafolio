@@ -43,11 +43,9 @@ jobs:
 
       - name: Lint (optional)
         run: |
-          if grep -q '"lint"' angular.json; then
-            pnpm run lint
-          else
-            echo "No lint target configured in angular.json. Skipping lint."
-          fi
+          node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('angular.json','utf8'));const p=Object.values(a.projects||{})[0]||{};const hasLint=!!(p.architect&&p.architect.lint);process.exit(hasLint?0:1)" \
+            && pnpm run lint \
+            || echo "No lint target configured in angular.json. Skipping lint."
 
       - name: Test
         env:

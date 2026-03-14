@@ -25,6 +25,12 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
+      },
+    },
     autoWatch: true,
     browsers: ["Chrome"],
     failOnEmptyTestSuite: false,
