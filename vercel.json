@@ -1,6 +1,6 @@
 {
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm build",
+  "buildCommand": "echo \"export const environment = { production: true, emailjs: { serviceId: '$EMAILJS_SERVICE_ID', templateId: '$EMAILJS_TEMPLATE_ID', publicKey: '$EMAILJS_PUBLIC_KEY' } };\" > src/environments/environment.prod.ts && pnpm build",
   "outputDirectory": "dist/portafolio/browser",
   "rewrites": [
     { "source": "/assets/(.*)", "destination": "/assets/$1" },
