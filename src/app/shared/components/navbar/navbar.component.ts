@@ -45,19 +45,33 @@ export class NavbarComponent implements OnInit, OnDestroy {
   readonly navbarScrolled = signal(false);
 
   private lastScrollY = 0;
+  private readonly scrollDeltaThreshold = 8;
+  private readonly showAtTopThreshold = 80;
+  private readonly hideStartThreshold = 140;
   private scrollListener: (() => void) | null = null;
 
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
     this.scrollListener = () => {
-      const currentY = window.scrollY;
+      const currentY = Math.max(window.scrollY, 0);
       this.navbarScrolled.set(currentY > 50);
 
-      if (currentY > this.lastScrollY && currentY > 100) {
+      if (currentY <= this.showAtTopThreshold) {
+        this.navbarVisible.set(true);
+        this.lastScrollY = currentY;
+        return;
+      }
+
+      const delta = currentY - this.lastScrollY;
+      if (Math.abs(delta) < this.scrollDeltaThreshold) {
+        return;
+      }
+
+      if (delta > 0 && currentY > this.hideStartThreshold) {
         this.navbarVisible.set(false);
         this.mobileMenuOpen.set(false);
-      } else {
+      } else if (delta < 0) {
         this.navbarVisible.set(true);
       }
 
