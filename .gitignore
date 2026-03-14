@@ -58,6 +58,5 @@ test-results.xml
 testem.log
 /typings
 
-# Angular environment files (contain API keys - never commit)
-src/environments/environment.ts
-src/environments/environment.prod.ts
+# Angular environment files with real API keys - never commit with actual keys
+# environment.prod.ts is committed with empty values; Vercel overwrites at build time
