@@ -13,9 +13,7 @@ out-tsc/
 .env.*
 !.env.example
 
-# 3D Models (large binary files from Meshy.ai)
-src/assets/models/*.glb
-src/assets/models/*.gltf
+# 3D Models
 
 # IDE
 .idea/
