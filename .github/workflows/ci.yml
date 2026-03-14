@@ -41,8 +41,13 @@ jobs:
         id: chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: Lint
-        run: pnpm run lint --if-present
+      - name: Lint (optional)
+        run: |
+          if grep -q '"lint"' angular.json; then
+            pnpm run lint
+          else
+            echo "No lint target configured in angular.json. Skipping lint."
+          fi
 
       - name: Test
         env:
