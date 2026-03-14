@@ -11,7 +11,8 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     TestBed.overrideComponent(AppComponent, {
       set: {
-        template: '<main></main><footer><p>&copy; 2026 Shiva. Todos los derechos reservados.</p></footer>',
+        template:
+          '<main></main><footer><p>&copy; 2026 Shiva. Todos los derechos reservados.</p></footer>',
       },
     });
 
