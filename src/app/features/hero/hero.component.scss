@@ -9,6 +9,18 @@ section {
     var(--bg-secondary) 100%
   );
   transition: background 0.3s ease;
+  overflow-anchor: none;
+}
+
+.hero-role {
+  min-height: 1.75rem;
+}
+
+.role-text {
+  display: inline-block;
+  min-width: clamp(16ch, 38vw, 30ch);
+  white-space: nowrap;
+  text-align: left;
 }
 
 // Chip styles
