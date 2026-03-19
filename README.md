@@ -55,7 +55,8 @@ Mi objetivo es unir la precisión de la ingeniería con la creatividad del códi
 
 - **Email**: danysuarez1606@gmail.com  
 - **LinkedIn**: https://www.linkedin.com/in/daniel-alejandro-casta%C3%B1eda-su%C3%A1rez-165197211/
-- **WhatsApp**: [+57 301 388 4905](https://wa.me/573013884905)  
+- **WhatsApp**: [+57 301 388 4905](https://wa.me/573013884905)
+- **Web**:  https://shivadev.vercel.app/
 
 ---
 
